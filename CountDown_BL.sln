@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountDown_BL", "CountDown_BL\CountDown_BL.csproj", "{07DF1576-201E-429C-BD3A-D7B24F27BB1B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CountDown_BL", "CountDown_BL\CountDown_BL.csproj", "{07DF1576-201E-429C-BD3A-D7B24F27BB1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountDown_BL_WBS", "CountDown_BL_WBS\CountDown_BL_WBS.csproj", "{C8D2D1BA-6B6E-4284-AD0D-5476B98D9F72}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{07DF1576-201E-429C-BD3A-D7B24F27BB1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07DF1576-201E-429C-BD3A-D7B24F27BB1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07DF1576-201E-429C-BD3A-D7B24F27BB1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8D2D1BA-6B6E-4284-AD0D-5476B98D9F72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8D2D1BA-6B6E-4284-AD0D-5476B98D9F72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8D2D1BA-6B6E-4284-AD0D-5476B98D9F72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8D2D1BA-6B6E-4284-AD0D-5476B98D9F72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,170 @@
+﻿@page "/"
+@using System.Threading
+@implements IDisposable
+
+<PageTitle>سال 1401 | باگ لند</PageTitle>
+
+
+<MudContainer Class="mt-16 mytt">
+    <MudText Typo="Typo.h3" Align="Align.Center" GutterBottom="true">تایمر آنلاین زمان سال تحویل</MudText>
+    <MudText Align="Align.Center">تیم باگ لند سالی پر از موفقیت و شادی رو برای شما آرزو میکند</MudText>
+    <MudGrid Class="mt-8">
+        <MudItem xs="12" sm="12" md="3">
+        </MudItem>
+        <MudItem xs="12" sm="6" md="6">
+            <MudCard style="background-color: #27272f;" Elevation="25" Class="rounded-lg pb-4">
+                <MudCardContent>
+                    <div class="d-flex justify-center">
+                        @if (day == 0 && hour != 0 && min != 0)
+                        {
+                            <h2 dir="rtl">
+                                <span><span style="color: #ff7979;">@(hour)</span> ساعت و <span style="color: #ff7979;">@(min)</span> دقیقه و <span style="color: #ff7979;">@(second)</span> ثانیه تا سال جدید!</span>
+                            </h2>
+                        }
+                        else if (day != 0 && hour == 0 && min != 0)
+                        {
+                            <h2 dir="rtl">
+                                <span><span style="color: #ff7979;">@(day)</span> روز و <span style="color: #ff7979;">@(min)</span> دقیقه و <span style="color: #ff7979;">@(second)</span> ثانیه تا سال جدید!</span>
+                            </h2>
+                        }
+                        else if (day != 0 && hour != 0 && min == 0)
+                        {
+                            <h2 dir="rtl">
+                                <span><span style="color: #ff7979;">@(day)</span> روز و <span style="color: #ff7979;">@(hour)</span> ساعت و <span style="color: #ff7979;">@(second)</span> ثانیه تا سال جدید!</span>
+                            </h2>
+                        }
+                        else if (day == 0 && hour == 0 && min != 0)
+                        {
+                            <h2 dir="rtl">
+                                <span><span style="color: #ff7979;">@(min)</span> دقیقه و <span style="color: #ff7979;">@(second)</span> ثانیه تا سال جدید!</span>
+                            </h2>
+                        }
+                        else if (day == 0 && hour != 0 && min == 0)
+                        {
+                            <h2 dir="rtl">
+                                <span><span style="color: #ff7979;">@(hour)</span> ساعت و <span style="color: #ff7979;">@(second)</span> ثانیه تا سال جدید!</span>
+                            </h2>
+                        }
+                        else if (day != 0 && hour == 0 && min == 0)
+                        {
+                            <h2 dir="rtl">
+                                <span><span style="color: #ff7979;">@(day)</span> روز و <span style="color: #ff7979;">@(second)</span> ثانیه تا سال جدید!</span>
+                            </h2>
+                        }
+                        else if (day == 0 && hour == 0 && min == 0)
+                        {
+                            <h2 dir="rtl">
+                                <span><span style="color: #ff7979;">@(second)</span> ثانیه تا سال جدید!</span>
+                            </h2>
+                        }
+                        else if (day != 0 && hour != 0 && min != 0)
+                        {
+                            <h2 dir="rtl">
+                                <span><span style="color: #ff7979;">@(day)</span> روز و <span style="color: #ff7979;">@(hour)</span> ساعت و <span style="color: #ff7979;">@(min)</span> دقیقه و <span style="color: #ff7979;">@(second)</span> ثانیه تا سال جدید!</span>
+                            </h2>
+                        }
+                    </div>
+                </MudCardContent>
+            </MudCard>
+        </MudItem>
+        <MudItem xs="12" sm="6" md="3">
+        </MudItem>
+
+    </MudGrid>
+
+    <MudTimeline>
+        <MudTimelineItem Color="Color.Info" Size="Size.Small">
+            <ItemOpposite>
+                <MudIcon Icon="@Icons.Filled.Celebration" Color="Color.Info" />
+            </ItemOpposite>
+            <ItemContent>
+                <MudText Color="Color.Info" Typo="Typo.h6" GutterBottom="true">سال ببر!</MudText>
+                <MudText>حیوان ببر نماد بی باکی و دلیری و نترس بودن است و کاملا در عشق و زندگی روزمره خود شتاب زده عمل می کند. بنابراین توصیه می شود که در همه امور صرفا دنباله رو او نباشید.</MudText>
+            </ItemContent>
+        </MudTimelineItem>
+        <MudTimelineItem Color="Color.Success" Size="Size.Small">
+            <ItemOpposite>
+                <MudIcon Icon="@Icons.Filled.AutoFixHigh" Color="Color.Success" />
+            </ItemOpposite>
+            <ItemContent>
+                <MudText Color="Color.Success" Typo="Typo.h6" GutterBottom="true">اینم از جمله انگیزشی</MudText>
+                <MudText>سال نو جدید، نه تنها خوشبختی را برای همه به ارمغان می اورد، بلکه ما را با امید به تحقق بخشیدن به رویاهای خود و یا آغاز یک زندگی جدید، خوشحال می کند. بنابراین، سال جدید، برای همه بسیار ویژه است.</MudText>
+            </ItemContent>
+        </MudTimelineItem>
+        <MudTimelineItem Color="Color.Error" Size="Size.Small">
+            <ItemOpposite>
+                <MudIcon Icon="@Icons.Filled.Code" Color="Color.Error" />
+            </ItemOpposite>
+            <ItemContent>
+                <MudText Color="Color.Error" Typo="Typo.h6" GutterBottom="true">درباره این سایت</MudText>
+                <MudText><p>این سایت با تکنولوژی بلیزور توسط تیم توسه <a href="https://BugLand.ir" rel="noopener noreferrer" target="_blank">باگ لند</a> توسعه داده شده است. کد این سایت ساده در گیتهاب قرار میگیره تا شما برنامه نویسان گرامی بتونید از اون استفاده کنید.</p></MudText>
+            </ItemContent>
+        </MudTimelineItem>
+    </MudTimeline>
+</MudContainer>
+
+
+@code {
+    public int day = 0;
+    public int hour = 0;
+    public int min = 0;
+    private int second = 0;
+
+    Timer aTimer;
+
+
+    DateTime now;
+    DateTime newYear;
+
+    protected override void OnInitialized()
+    {
+        newYear = new DateTime(2022, 3, 20, 19, 3, 26);
+        now = DateTime.Now;
+
+        var difference = newYear - now;
+
+        day = difference.Days;
+        hour = difference.Hours;
+        min = difference.Minutes;
+        second = difference.Seconds;
+
+        aTimer = new Timer(Tick, null, 0, 1000);
+    }
+
+    private void Tick(object _)
+    {
+        if (second > 0)
+        {
+            second -= 1;
+            InvokeAsync(StateHasChanged);
+        }
+        else if (min > 0)
+        {
+            min -= 1;
+            second = 59;
+            InvokeAsync(StateHasChanged);
+        }
+        else if (hour > 0)
+        {
+            hour -= 1;
+            second = 59;
+            min = 59;
+            InvokeAsync(StateHasChanged);
+        }
+        else
+        {
+            day -= 1;
+            hour = 24;
+            second = 59;
+            min = 59;
+            InvokeAsync(StateHasChanged);
+        }
+
+
+    }
+
+    public void Dispose()
+    {
+        aTimer?.Dispose();
+    }
+}
