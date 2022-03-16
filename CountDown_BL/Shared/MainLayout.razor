@@ -1,0 +1,33 @@
+﻿@inherits LayoutComponentBase
+
+<MudThemeProvider IsDarkMode="true" Theme="_theme" />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<MudLayout>
+    <MudAppBar Elevation="0">
+        <MudText Align="Align.Right">تیم باگ لند</MudText>
+        <MudSpacer />
+        <MudIconButton Icon="@Icons.Custom.Brands.Telegram" Color="Color.Inherit" Link="https://t.me/BugLand_ir" Target="_blank" />
+        <MudIconButton Icon="@Icons.Custom.Brands.Instagram" Color="Color.Inherit" Link="https://instagram.com/BugLand_ir" Target="_blank" />
+        <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Inherit" Link="https://github.com/mahdi008397/NewYear" Target="_blank" />
+    </MudAppBar>
+    <MudMainContent>
+
+            @Body
+
+    </MudMainContent>
+</MudLayout>
+
+@code {
+    private MudTheme _theme = new MudTheme()
+        {
+            Typography = new Typography()
+            {
+                Default = new Default()
+                {
+                    FontFamily = new[] { "Vazir" }
+                }
+            }
+        };
+}
