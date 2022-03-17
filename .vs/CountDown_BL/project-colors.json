@@ -5,7 +5,12 @@
       "ProjectGuid": "07df1576-201e-429c-bd3a-d7b24f27bb1b",
       "DisplayName": "CountDown_BL",
       "ColorIndex": 0
+    },
+    "c8d2d1ba-6b6e-4284-ad0d-5476b98d9f72": {
+      "ProjectGuid": "c8d2d1ba-6b6e-4284-ad0d-5476b98d9f72",
+      "DisplayName": "CountDown_BL_WBS",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }

@@ -4,7 +4,6 @@
 
 <PageTitle>سال 1401 | باگ لند</PageTitle>
 
-
 <MudContainer Class="mt-16 mytt">
     <MudText Typo="Typo.h3" Align="Align.Center" GutterBottom="true">تایمر آنلاین زمان سال تحویل</MudText>
     <MudText Align="Align.Center">تیم باگ لند سالی پر از موفقیت و شادی رو برای شما آرزو میکند</MudText>
@@ -103,23 +102,18 @@
     </MudTimeline>
 </MudContainer>
 
-
 @code {
-    public int day = 0;
-    public int hour = 0;
-    public int min = 0;
+    private int day = 0;
+    private int hour = 0;
+    private int min = 0;
     private int second = 0;
 
     Timer aTimer;
 
-
-    DateTime now;
-    DateTime newYear;
-
     protected override void OnInitialized()
     {
-        newYear = new DateTime(2022, 3, 20, 19, 3, 26);
-        now = DateTime.Now;
+        DateTime newYear = new DateTime(2022, 3, 20, 19, 3, 26);
+        DateTime now = DateTime.Now;
 
         var difference = newYear - now;
 
@@ -135,21 +129,18 @@
     {
         if (second > 0)
         {
-            second -= 1;
-            InvokeAsync(StateHasChanged);
+            second -= 1; 
         }
         else if (min > 0)
         {
             min -= 1;
             second = 59;
-            InvokeAsync(StateHasChanged);
         }
         else if (hour > 0)
         {
             hour -= 1;
             second = 59;
             min = 59;
-            InvokeAsync(StateHasChanged);
         }
         else
         {
@@ -157,10 +148,8 @@
             hour = 24;
             second = 59;
             min = 59;
-            InvokeAsync(StateHasChanged);
         }
-
-
+	  InvokeAsync(StateHasChanged);
     }
 
     public void Dispose()
